@@ -27,8 +27,8 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0.4.0'
         with:
-          workload_identity_provider: 'projects/695188959042/locations/global/workloadIdentityPools/scott-pool/providers/scott-provider'
-          service_account: 'github-test@vaulted-timing-380021.iam.gserviceaccount.com'
+          workload_identity_provider: 'projects/228913880487/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+          service_account: 'github-service@scott-number-6-project.iam.gserviceaccount.com'
           create_credentials_file: true
           token_format: access_token
           
@@ -38,7 +38,7 @@ jobs:
       - name: Login to Artifact Registry
         uses: docker/login-action@v1
         with:
-          registry: us-central1-docker.pkg.dev
+          registry: europe-west4-docker.pkg.dev
           username: oauth2accesstoken
           password: ${{ steps.auth.outputs.access_token }}
           
@@ -46,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: us-central1-docker.pkg.dev/vaulted-timing-380021/another-repo/first-blog
+          images: europe-west4-docker.pkg.dev/vaulted-timing-380021/blog/first-blog
           tags: |
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
             
