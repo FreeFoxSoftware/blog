@@ -1,0 +1,6 @@
+createNamespace: true
+replicaCount: 2
+image:
+  pullPolicy: Always
+  tag: "latest"
+  name: first-blog
