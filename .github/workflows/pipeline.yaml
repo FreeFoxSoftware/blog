@@ -46,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: europe-west4-docker.pkg.dev/vaulted-timing-380021/blog/first-blog
+          images: europe-west4-docker.pkg.dev/scott-number-6-project/blog/first-blog
           tags: |
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
             
