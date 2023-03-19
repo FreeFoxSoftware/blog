@@ -2,7 +2,7 @@ createNamespace: true
 replicaCount: 2
 image:
   pullPolicy: Always
-  tag: "latest"
+  tag: "0.0.1+replaced.by.yq.in.pipeline"
   name: first-blog
 config: 
   domain: replaced

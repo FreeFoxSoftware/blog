@@ -78,6 +78,8 @@ jobs:
           CHART_FILE=$CHART_NAME-${{ env.GitVersion_SemVer }}.tgz
           echo "Package chart $CHART_NAME at $HELM_PATH"
           cd $HELM_PATH
+          yq -i '.version="${{ env.GitVersion_SemVer }}"' ./Chart.yaml
+          yq -i '.image.tag="${{ env.GitVersion_SemVer }}"' ./values.yaml
           helm package .
           helm push $CHART_FILE oci://europe-west4-docker.pkg.dev/scott-number-7-project/charts
 
