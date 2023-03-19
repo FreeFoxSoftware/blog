@@ -4,3 +4,5 @@ image:
   pullPolicy: Always
   tag: "latest"
   name: first-blog
+config: 
+  domain: replaced
