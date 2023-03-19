@@ -21,7 +21,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Needed for gitversion
-          
+     
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.15
+        with:
+          versionSpec: '5.x'
 
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
@@ -31,9 +35,6 @@ jobs:
           service_account: 'github-service@scott-number-7-project.iam.gserviceaccount.com'
           create_credentials_file: true
           token_format: access_token
-          
-#      - name: configure docker
-#        run: gcloud auth configure-docker us-central1-docker.pkg.dev
         
       - name: Login to Artifact Registry
         uses: docker/login-action@v1
@@ -41,6 +42,11 @@ jobs:
           registry: europe-west4-docker.pkg.dev
           username: oauth2accesstoken
           password: ${{ steps.auth.outputs.access_token }}
+
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v0.9.15
+        with:
+          useConfigFile: true
           
       - name: Extract metadata (tags, labels) for Docker
         id: meta
@@ -48,6 +54,7 @@ jobs:
         with:
           images: europe-west4-docker.pkg.dev/scott-number-7-project/blog/first-blog
           tags: |
+            type=raw,value=${{ env.GitVersion_SemVer }}
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
             
       - name: Test container
@@ -68,8 +75,16 @@ jobs:
         run: |
           HELM_PATH=./charts/blog
           CHART_NAME=blog
-          CHART_FILE=$CHART_NAME-0.0.1.tgz
+          CHART_FILE=$CHART_NAME-${{ env.GitVersion_SemVer }.tgz
           echo "Package chart $CHART_NAME at $HELM_PATH"
           cd $HELM_PATH
           helm package .
           helm push $CHART_FILE oci://europe-west4-docker.pkg.dev/scott-number-7-project/charts
+
+      - name: Create Tag
+        if: github.ref_name == 'main'
+        uses: negz/create-tag@v1
+        with:
+          version: ${{ env.GitVersion_SemVer }}
+          message: 'Auto tagging version ${{ env.GitVersion_SemVer }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
