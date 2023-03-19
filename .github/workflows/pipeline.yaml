@@ -75,7 +75,7 @@ jobs:
         run: |
           HELM_PATH=./charts/blog
           CHART_NAME=blog
-          CHART_FILE=$CHART_NAME-${{ env.GitVersion_SemVer }.tgz
+          CHART_FILE=$CHART_NAME-${{ env.GitVersion_SemVer }}.tgz
           echo "Package chart $CHART_NAME at $HELM_PATH"
           cd $HELM_PATH
           helm package .
