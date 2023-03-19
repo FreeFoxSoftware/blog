@@ -27,8 +27,8 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0.4.0'
         with:
-          workload_identity_provider: 'projects/228913880487/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
-          service_account: 'github-service@scott-number-6-project.iam.gserviceaccount.com'
+          workload_identity_provider: 'projects/236476309139/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+          service_account: 'github-service@scott-number-7-project.iam.gserviceaccount.com'
           create_credentials_file: true
           token_format: access_token
           
@@ -46,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: europe-west4-docker.pkg.dev/scott-number-6-project/blog/first-blog
+          images: europe-west4-docker.pkg.dev/scott-number-7-project/blog/first-blog
           tags: |
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
             
@@ -72,4 +72,4 @@ jobs:
           echo "Package chart $CHART_NAME at $HELM_PATH"
           cd $HELM_PATH
           helm package .
-          helm push $CHART_FILE oci://europe-west4-docker.pkg.dev/scott-number-6-project/charts
+          helm push $CHART_FILE oci://europe-west4-docker.pkg.dev/scott-number-7-project/charts
