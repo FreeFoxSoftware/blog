@@ -31,8 +31,8 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0.4.0'
         with:
-          workload_identity_provider: 'projects/236476309139/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
-          service_account: 'github-service@scott-number-7-project.iam.gserviceaccount.com'
+          workload_identity_provider: 'projects/362975807929/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+          service_account: 'github-service@scott-walker-engineering.iam.gserviceaccount.com'
           create_credentials_file: true
           token_format: access_token
         
@@ -52,7 +52,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: europe-west4-docker.pkg.dev/scott-number-7-project/blog/first-blog
+          images: europe-west4-docker.pkg.dev/scott-walker-engineering/blog/first-blog
           tags: |
             type=raw,value=${{ env.GitVersion_SemVer }}
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
@@ -81,7 +81,7 @@ jobs:
           yq -i '.version="${{ env.GitVersion_SemVer }}"' ./Chart.yaml
           yq -i '.image.tag="${{ env.GitVersion_SemVer }}"' ./values.yaml
           helm package .
-          helm push $CHART_FILE oci://europe-west4-docker.pkg.dev/scott-number-7-project/charts
+          helm push $CHART_FILE oci://europe-west4-docker.pkg.dev/scott-walker-engineering/charts
 
       - name: Create Tag
         if: github.ref_name == 'main'
