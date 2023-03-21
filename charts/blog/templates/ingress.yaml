@@ -8,11 +8,11 @@ metadata:
 spec:
   tls:
   - hosts:
-    - blog.{{ .Values.config.domain }}
+    - {{ .Values.config.externalHost }}
     secretName: blog-cert
   ingressClassName: nginx
   rules:
-  - host: "blog.{{ .Values.config.domain }}"
+  - host: "{{ .Values.config.externalHost }}"
     http:  
       paths:
       - path: /
