@@ -20,7 +20,7 @@ Clicking the link confirmed that my account was verified yet I was still getting
 
 ## TLDR
 
-I was receiving the error `Error creating ManagedZone: googleapi: Error 400: Please verify ownership of the 'scottwalker.dev.' domain (or a parent) at http://www.google.com/webmasters/verification/ and try again, verifyManagedZoneDnsNameOwnership`. Everything was already verified according to the `webmasters/verification` but it appears that it was only verified for the email with which I registered. You can also add other email addresses that can be 'validated'. Adding the email address for the service account of Terraform (The service account actually creating the zone) solved this.
+I was receiving the error `Error creating ManagedZone: googleapi: Error 400: Please verify ownership of the 'scottwalker.dev.' domain (or a parent) at http://www.google.com/webmasters/verification/ and try again, verifyManagedZoneDnsNameOwnership`. Everything was already verified according to the `webmasters/verification` but it appears that it was only verified for the email with which I registered. You can also add other email addresses that can be 'validated'. Adding the email address for the service account of Terraform (the service account actually creating the zone) solved this.
 
 ## The Problem
 
