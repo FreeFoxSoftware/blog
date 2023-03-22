@@ -20,7 +20,7 @@ Clicking the link confirmed that my account was verified yet I was still getting
 
 ## TLDR
 
-I was receiving the error `Error creating ManagedZone: googleapi: Error 400: Please verify ownership of the 'scottwalker.dev.' domain (or a parent) at http://www.google.com/webmasters/verification/ and try again, verifyManagedZoneDnsNameOwnership`. Everything was already verified according to the `webmasters/verification` but it appears that it was only verified for the email with which I registered. You can also add other email addresses that can be 'validated'. Adding the email address for the service account of Terraform (The service account actually creating the zone) solved this.
+I was receiving the error `Error creating ManagedZone: googleapi: Error 400: Please verify ownership of the 'scottwalker.dev.' domain (or a parent) at http://www.google.com/webmasters/verification/ and try again, verifyManagedZoneDnsNameOwnership`. Everything was already verified according to the `webmasters/verification` but it appears that it was only verified for the email with which I registered. You can also add other email addresses that can be 'validated'. Adding the email address for the service account of Terraform (the service account actually creating the zone) solved this.
 
 ## The Problem
 
@@ -35,9 +35,9 @@ Even though the `webmasters/verification` said that everything was fine and vali
 
 I won't go into the specifics on the Google Domains workflow as the specifics will be different per registra but the overall flow should be similar.
 
-- Ensure that you're adding the record to the correct place. E.G. if you're using `Custom Name Servers` then add the record to wherever that is hosted. If you're not using Custom Name Servers then continue using the default name servers. 
-- Add a text record with the provided data from `webmasters/verification`. Leave the host name black if you want to verify your root domain.
-- Return to the `webmasters/verification` and click the 'validate' button.
+1. Ensure that you're adding the record to the correct place. E.G. if you're using `Custom Name Servers` then add the record to wherever that is hosted. If you're not using Custom Name Servers then continue using the default name servers. 
+2. Add a text record with the provided data from `webmasters/verification`. Leave the host name black if you want to verify your root domain.
+3. Return to the `webmasters/verification` and click the 'validate' button.
 
 All going well, this could solve your issue!!
 
