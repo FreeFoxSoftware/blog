@@ -1,1 +1,2 @@
 - Authenticate Terraform Cloud to GCP
+- Stack Overflow toxicity
