@@ -3,7 +3,7 @@ author: Scott Walker
 pubDatetime: 2023-03-21T15:00:00Z
 title: How to solve DNS Zone validation errors in GCP
 postSlug: solving-dns-zone-validation-in-gcp
-featured: true
+featured: false
 draft: false
 tags:
   - GoogleCloudPlatform
