@@ -1,4 +1,4 @@
-- Authenticate Terraform Cloud to GCP
 - Stack Overflow toxicity
 - Creating a Github Action with GoLang
-- 
+- The helm oci bug in Argo
+- Deploying a helm chart to google artifact registry
