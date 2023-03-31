@@ -1,6 +1,6 @@
 ---
 author: Scott Walker
-pubDatetime: 2023-03-29T20:00:00Z
+pubDatetime: 2023-03-30T20:00:00Z
 title: Connect to Google Cloud using Terraform Cloud and Github Actions
 postSlug: connecting-terraform-cloud-to-google-cloud-platform-and-github-actions
 featured: false
