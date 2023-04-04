@@ -2,3 +2,7 @@
 - Creating a Github Action with GoLang
 - The helm oci bug in Argo
 - Deploying a helm chart to google artifact registry
+- C# error handling in a good way
+- In memory databases - unit testing
+- Avoid Parrallelism unit tests
+- Mock a http request
