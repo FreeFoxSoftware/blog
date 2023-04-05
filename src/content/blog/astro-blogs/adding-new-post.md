@@ -6,7 +6,7 @@ postSlug: adding-new-posts-in-astropaper-theme
 featured: false
 draft: true
 tags:
-  - docs
+  - docsf
 ogImage: ""
 description:
   Some rules & recommendations for creating or adding new posts using AstroPaper
