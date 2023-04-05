@@ -1,5 +1,6 @@
 createNamespace: true
 replicaCount: 2
+namespace: replaced
 image:
   pullPolicy: Always
   tag: "0.0.1+replaced.by.yq.in.pipeline"
