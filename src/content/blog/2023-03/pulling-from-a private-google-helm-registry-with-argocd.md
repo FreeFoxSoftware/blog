@@ -11,7 +11,7 @@ tags:
   - Helm
   - GoogleArtifactRegistry
 ogImage: ""
-description: How to deploy a helm chart from Google Artifact Registry with ArgoCd
+description: Helm and Argo are two powerful tools to help manage your deployments. Here I'll show you how they can work together along with a Google Artifact Registry
 ---
 
 [ArgoCd](https://argoproj.github.io/cd/) is a great open source tool that allows you to simply manage your resources. It also allows you to connect to private registries and pull helm charts. In this blog, we'll go over how to do this when your registy is Google Artifact Registry!
