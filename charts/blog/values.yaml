@@ -3,6 +3,6 @@ replicaCount: 2
 image:
   pullPolicy: Always
   tag: "0.0.1+replaced.by.yq.in.pipeline"
-  name: first-blog
+  name: blog
 config: 
   externalHost: replaced

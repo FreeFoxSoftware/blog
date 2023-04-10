@@ -55,7 +55,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: europe-west4-docker.pkg.dev/scott-walker-engineering/blog/first-blog
+          images: europe-west4-docker.pkg.dev/scott-walker-engineering/applications/blog
           tags: |
             type=raw,value=${{ env.GitVersion_SemVer }}
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
