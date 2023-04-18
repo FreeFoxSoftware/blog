@@ -6,4 +6,4 @@
 - In memory databases - unit testing
 - Avoid Parrallelism unit tests
 - Mock a http request
-- install flux via github actions
+- Arguments in helm functions
