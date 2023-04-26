@@ -1,7 +1,7 @@
 ---
 author: Scott Walker
 pubDatetime: 2023-03-22T17:00:00Z
-title: Deploy a helm chart from Google Artifact Registry with ArgoCd
+title: Deploy a Helm Chart from Google Artifact Registry with ArgoCd
 postSlug: deploying-a-helm-chart-from-google-artifact-registry-with-argocd
 featured: false
 draft: false
