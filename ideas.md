@@ -7,3 +7,4 @@
 - Avoid Parrallelism unit tests
 - Mock a http request
 - Arguments in helm functions
+- mock vs stub vs fake vs double
