@@ -8,3 +8,4 @@
 - Mock a http request
 - Arguments in helm functions
 - mock vs stub vs fake vs double
+- how to copy to clipboard in javascript
