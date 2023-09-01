@@ -12,3 +12,5 @@ RUN npm run build
 FROM nginx
 
 COPY --from=frontendbuild app/dist /usr/share/nginx/html
+
+

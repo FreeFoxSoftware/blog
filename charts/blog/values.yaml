@@ -3,6 +3,6 @@ replicaCount: 2
 image:
   pullPolicy: Always
   tag: "0.0.1+replaced.by.yq.in.pipeline"
-  name: blog
+  name: europe-west4-docker.pkg.dev/ff-infrastructure-shared/images/blog
 config: 
   externalHost: replaced

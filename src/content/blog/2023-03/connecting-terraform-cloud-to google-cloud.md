@@ -12,7 +12,7 @@ tags:
   - Github Actions
 ogImage: ""
 description: Terraform Cloud is a hosted manner of storing your Terraform state. Let's get this connected to Google Cloud via Github Actions
----
+---  
 
 Terraform is an open source tool that allows you to create resources for any of the major cloud platforms (as well as a few other ones). One of the key points of Terraform is its `state` file which is a `json` format file which represents the current state of your infrastructure. There are a few ways to store and manage this file but we're going to look into `Terraform Cloud`.
 
